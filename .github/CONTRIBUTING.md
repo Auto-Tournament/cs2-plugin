@@ -30,6 +30,10 @@ Thank you for your interest in contributing! 🎉
 - ✅ Follow existing code style
 - ✅ Keep PRs focused on one feature/fix
 
+## Releases
+
+Release notes go in the GitHub release; the [docs changelog](https://docs.autotournament.gg/reference/changelog/cs2-plugin) is generated from them, and [CHANGELOG.md](../CHANGELOG.md) only links there.
+
 ## 🐛 Reporting Issues
 
 Found a bug? Please [open an issue](https://github.com/Auto-Tournament/cs2-plugin/issues/new) with:
