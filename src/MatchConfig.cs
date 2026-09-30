@@ -79,7 +79,7 @@ namespace AutoTournamentCS2
         [JsonPropertyName("wingman")]
         public bool Wingman { get; set; } = false;
 
-        // When true, Auto Tournament CS2 runs the match in bot-driven simulation mode instead of waiting for real players.
+        // When true, MatchZy Enhanced runs the match in bot-driven simulation mode instead of waiting for real players.
         // This flag is optional and defaults to false to preserve existing behavior.
         [JsonPropertyName("simulation")]
         public bool Simulation { get; set; } = false;
@@ -104,7 +104,7 @@ namespace AutoTournamentCS2
 
         // Optional: per-match admin SteamIDs (Steam64). When provided, any player whose
         // SteamID appears in this list is treated as an admin for the duration of this match,
-        // in addition to any global admins defined via CSSharp or Auto Tournament CS2 admins.json.
+        // in addition to any global admins defined via CSSharp or MatchZy Enhanced admins.json.
         [JsonPropertyName("admins")]
         public List<string> AdminSteamIds { get; set; } = new List<string>();
 

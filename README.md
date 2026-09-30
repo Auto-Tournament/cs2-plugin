@@ -3,13 +3,13 @@
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="assets/logo/me-wordmark-dark.svg">
     <source media="(prefers-color-scheme: light)" srcset="assets/logo/me-wordmark-light.svg">
-    <img src="assets/logo/me-wordmark-light.svg" alt="Auto Tournament CS2" height="56">
+    <img src="assets/logo/me-wordmark-light.svg" alt="MatchZy Enhanced" height="56">
   </picture>
 
-# Auto Tournament CS2
+# MatchZy Enhanced
 
-[![Build](https://github.com/Auto-Tournament/cs2-plugin/actions/workflows/build.yml/badge.svg)](https://github.com/Auto-Tournament/cs2-plugin/actions/workflows/build.yml)
-[![Release](https://img.shields.io/github/v/release/Auto-Tournament/cs2-plugin)](https://github.com/Auto-Tournament/cs2-plugin/releases)
+[![Build](https://github.com/Auto-Tournament/matchzy-enhanced/actions/workflows/build.yml/badge.svg)](https://github.com/Auto-Tournament/matchzy-enhanced/actions/workflows/build.yml)
+[![Release](https://img.shields.io/github/v/release/Auto-Tournament/matchzy-enhanced)](https://github.com/Auto-Tournament/matchzy-enhanced/releases)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
 </div>
@@ -27,7 +27,9 @@ Auto Tournament is built and maintained by one person — sponsorships pay for d
 
 </div>
 
-Auto Tournament CS2 is the CS2 server plugin for [Auto Tournament](https://github.com/Auto-Tournament/auto-tournament).
+MatchZy Enhanced is the CS2 server plugin for [Auto Tournament](https://github.com/Auto-Tournament/auto-tournament).
+
+> **New setups: use [Ready Up](https://github.com/Auto-Tournament/ready-up).** Ready Up is the native match plugin that Auto Tournament 3.0 talks to over its fleet link. MatchZy Enhanced stays supported for servers that already run it and for Auto Tournament 2.x.
 Auto Tournament runs tournaments across a pool of CS2 servers and needs to set up, control and track
 matches from outside the game.
 
@@ -44,7 +46,7 @@ sets up servers with the plugin already installed and configured.
 
 To install by hand:
 
-1. Download the [latest release](https://github.com/Auto-Tournament/cs2-plugin/releases).
+1. Download the [latest release](https://github.com/Auto-Tournament/matchzy-enhanced/releases).
 2. Extract it into your server's `game/csgo/` directory.
 3. Restart the server.
 
@@ -235,7 +237,7 @@ shared MySQL database.
 
 ## License
 
-MatchZy Enhanced (now named Auto Tournament CS2) is MIT licensed, see [LICENSE](LICENSE) — free for any use, including paid work and commercial servers.
+MatchZy Enhanced is MIT licensed, see [LICENSE](LICENSE) — free for any use, including paid work and commercial servers.
 
 [Ready Up](https://github.com/Auto-Tournament/ready-up), the new native CS2 plugin, is a separate project and is not MIT: it's licensed under PolyForm Noncommercial.
 
@@ -245,7 +247,7 @@ Your logo here — [sponsor Auto Tournament](https://discord.gg/n7gHYau7aW) to b
 
 ## Credits
 
-Auto Tournament CS2 is forked from [MatchZy](https://github.com/shobhit-pathak/MatchZy) by shobhit-pathak.
+MatchZy Enhanced is forked from [MatchZy](https://github.com/shobhit-pathak/MatchZy) by shobhit-pathak.
 
 It is maintained by [sivert-io](https://github.com/sivert-io) and built on
 [CounterStrikeSharp](https://github.com/roflmuffin/CounterStrikeSharp/). The upstream copyright

@@ -747,7 +747,7 @@ namespace AutoTournamentCS2
 
             // Optional: per-match admin SteamIDs. When present, these Steam64 IDs are treated
             // as admins for the duration of this match in addition to any global admins from
-            // CSSharp or Auto Tournament CS2 admins.json.
+            // CSSharp or MatchZy Enhanced admins.json.
             if (jsonDataObject["admins"] != null)
             {
                 try

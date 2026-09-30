@@ -36,7 +36,7 @@ namespace AutoTournamentCS2
                 ExecUnpracCommands();
                 Server.ExecuteCommand("""exec gamemode_competitive.cfg;""");
             }
-            Log($"[StartSleepMode] Auto Tournament CS2 deactivated!");
+            Log($"[StartSleepMode] MatchZy Enhanced deactivated!");
         }
 
         [ConsoleCommand("css_sleep", "Starts sleep mode")]

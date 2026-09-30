@@ -13,7 +13,7 @@ namespace AutoTournamentCS2
     public partial class AutoTournamentCS2 : BasePlugin
     {
 
-        public override string ModuleName => "Auto Tournament CS2";
+        public override string ModuleName => "MatchZy Enhanced";
 
         public override string ModuleVersion => "2.0.0";
 
@@ -303,7 +303,7 @@ namespace AutoTournamentCS2
             }
 
             // Initialize the match-safe auto-updater (Steam UpToDateCheck) that will never
-            // restart the server while an Auto Tournament CS2 match is in progress.
+            // restart the server while a MatchZy Enhanced match is in progress.
             InitializeAutoTournamentCS2SafeAutoUpdater();
 
             commandActions = new Dictionary<string, Action<CCSPlayerController?, CommandInfo?>> {

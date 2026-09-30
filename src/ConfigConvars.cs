@@ -11,7 +11,7 @@ namespace AutoTournamentCS2
     public partial class AutoTournamentCS2
     {
 
-        // Identity used to scope this server's rows in the Auto Tournament CS2 database, so several servers
+        // Identity used to scope this server's rows in the MatchZy Enhanced database, so several servers
         // can share one database without overwriting each other's persistent config.
         // Leave empty to derive it from the bind address and game port (see ServerIdentity).
         // This must be set in config.cfg / server.cfg and is deliberately never persisted to the
@@ -54,17 +54,17 @@ namespace AutoTournamentCS2
         );
         public FakeConVar<string> safeAutoUpdaterAction = new(
             "at_safeautoupdater_action",
-            "What to do when a CS2 update is detected. warn_only = emit markers/events only; restart = kick players + quit when Auto Tournament CS2 is idle/postgame/error. Default: warn_only",
+            "What to do when a CS2 update is detected. warn_only = emit markers/events only; restart = kick players + quit when MatchZy Enhanced is idle/postgame/error. Default: warn_only",
             "warn_only"
         );
         public FakeConVar<int> safeAutoUpdaterOfflineBackoffSeconds = new(
             "at_safeautoupdater_offline_backoff_seconds",
-            "When Steam update checks fail due to DNS/network (offline servers), Auto Tournament CS2 will wait this many seconds before trying again. Default: 1800 (30 minutes)",
+            "When Steam update checks fail due to DNS/network (offline servers), MatchZy Enhanced will wait this many seconds before trying again. Default: 1800 (30 minutes)",
             1800
         );
 
         // Event/Webhook sending master switch (diagnostics)
-        public FakeConVar<bool> eventsEnabled = new("at_events_enabled", "Master switch for Auto Tournament CS2 event/webhook sending and retry queue processing. Default: true", true);
+        public FakeConVar<bool> eventsEnabled = new("at_events_enabled", "Master switch for MatchZy Enhanced event/webhook sending and retry queue processing. Default: true", true);
 
         // Center HTML notifications
         public FakeConVar<bool> centerHtmlNotifications = new("at_center_html_notifications", "Whether to show important notifications in the center of the screen (match live, pause, etc). Default: false", false);
@@ -88,7 +88,7 @@ namespace AutoTournamentCS2
         public FakeConVar<float> autoReadyPlayerReadyDelay = new("at_autoready_ready_delay", "Delay in seconds before auto-ready simulates a player typing .ready once teams are eligible. Default: 2", 2.0f);
         
         // Auto-Ready Simulation (testing helper)
-        // When enabled, Auto Tournament CS2 will spawn two bots (1 CT, 1 T) during the ready/warmup phase
+        // When enabled, MatchZy Enhanced will spawn two bots (1 CT, 1 T) during the ready/warmup phase
         // so you can test auto-ready and ready gating without manually joining the server.
         public FakeConVar<bool> autoReadySimulationEnabled = new("at_autoready_simulation_enabled", "When enabled, spawns 2 bots for ready-mode testing (1 CT + 1 T) and counts them as players. Default: false", false);
         public FakeConVar<float> autoReadySimulationBotSpawnDelay = new("at_autoready_simulation_bot_spawn_delay", "Delay in seconds between spawning the two ready-simulation bots. Default: 5", 5.0f);
@@ -383,7 +383,7 @@ namespace AutoTournamentCS2
             pauseAfterRoundRestore = bool.TryParse(args, out bool pauseAfterRoundRestoreValue) ? pauseAfterRoundRestoreValue : args != "0" && pauseAfterRoundRestore;
         }
 
-        [ConsoleCommand("at_chat_prefix", "Default value of chat prefix for Auto Tournament CS2 messages. Default value: [{Green}Auto Tournament{Default}]")]
+        [ConsoleCommand("at_chat_prefix", "Default value of chat prefix for MatchZy Enhanced messages. Default value: [{Green}Auto Tournament{Default}]")]
         public void AutoTournamentCS2ChatPrefix(CCSPlayerController? player, CommandInfo command)
         {
             if (player != null) return;
@@ -454,7 +454,7 @@ namespace AutoTournamentCS2
             database.SaveConfigValue("at_admin_chat_prefix", adminChatPrefix);
         }
 
-        [ConsoleCommand("at_chat_messages_timer_delay", "Number of seconds of delay before sending reminder messages from Auto Tournament CS2 (like unready message, paused message, etc). Default: 13")]
+        [ConsoleCommand("at_chat_messages_timer_delay", "Number of seconds of delay before sending reminder messages from MatchZy Enhanced (like unready message, paused message, etc). Default: 13")]
         public void AutoTournamentCS2ChatMessagesTimerDelay(CCSPlayerController? player, CommandInfo command)
         {
             if (player != null) return;

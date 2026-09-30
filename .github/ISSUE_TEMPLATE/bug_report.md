@@ -29,7 +29,7 @@ What actually happened.
 - **Deployment:** Docker / Local
 - **Runtime:** Bun / Node.js (version: )
 - **OS:**
-- **Auto Tournament CS2 Version:**
+- **MatchZy Enhanced Version:**
 
 ## 📸 Screenshots / Logs
 

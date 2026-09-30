@@ -17,7 +17,7 @@ if [ -f ".env" ]; then
     set +a
 fi
 
-echo -e "${BLUE}🚀 Auto Tournament CS2 Automated Release Script${NC}\n"
+echo -e "${BLUE}🚀 MatchZy Enhanced Automated Release Script${NC}\n"
 
 ensure_cmd() {
     local cmd="$1"
@@ -498,7 +498,7 @@ fi
 gh release create "v${VERSION}" \
     "${BUILD_ROOT}/${RELEASE_DIR}.zip" \
     --target "${RELEASE_SHA}" \
-    --title "Auto Tournament CS2 v${VERSION}" \
+    --title "MatchZy Enhanced v${VERSION}" \
     --notes "$RELEASE_NOTES" \
     --draft=false \
     ${LATEST_OR_PRERELEASE_FLAG}

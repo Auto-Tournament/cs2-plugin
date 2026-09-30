@@ -368,7 +368,7 @@ public partial class AutoTournamentCS2
             Server.ExecuteCommand("bot_quota 2");
         });
 
-        // After both spawns have had time to connect, register them in Auto Tournament CS2's ready tracking.
+        // After both spawns have had time to connect, register them in MatchZy Enhanced's ready tracking.
         float registrationDelay = delayBetweenBots + 3.0f;
         AddTimer(registrationDelay, EnsureAutoReadySimulationBotsTracked);
     }

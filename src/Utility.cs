@@ -2151,7 +2151,7 @@ namespace AutoTournamentCS2
             }
             if (showCreditsOnMatchStart.Value)
             {
-                Server.PrintToChatAll($"{chatPrefix} {ChatColors.Green}Auto Tournament CS2{ChatColors.Default} is forked from MatchZy by shobhit-pathak.");
+                Server.PrintToChatAll($"{chatPrefix} {ChatColors.Green}MatchZy Enhanced{ChatColors.Default} is forked from MatchZy by shobhit-pathak.");
             }
             if (matchStartMessage.Value.Trim() != "" && matchStartMessage.Value.Trim() != "\"\"")
             {
@@ -3720,7 +3720,7 @@ namespace AutoTournamentCS2
         private string? lastLoggedConfigScope;
 
         /// <summary>
-        /// Resolves the identity that scopes this server's rows in the Auto Tournament CS2 database.
+        /// Resolves the identity that scopes this server's rows in the MatchZy Enhanced database.
         ///
         /// Invoked lazily by Database on the first config read or write, and again on later
         /// accesses only while the result is provisional (see ScopeResolution.IsFinal). It cannot
@@ -4113,7 +4113,7 @@ namespace AutoTournamentCS2
                 return;
 
             // In simulation mode, bots represent configured players and must not be removed
-            // by generic Auto Tournament CS2 logic. For regular matches, bots can still be kicked.
+            // by generic MatchZy Enhanced logic. For regular matches, bots can still be kicked.
             if (isSimulationMode && player.IsBot)
             {
                 Log($"[KickPlayer] SKIP kick for bot '{player.PlayerName}' (UserId={player.UserId}) because simulation mode is active.");
@@ -4522,7 +4522,7 @@ namespace AutoTournamentCS2
 
         public bool HandlePlayerWhitelist(CCSPlayerController player, string steamId)
         {
-            // Always allow admins to bypass the Auto Tournament CS2 whitelist; they may join to observe
+            // Always allow admins to bypass the MatchZy Enhanced whitelist; they may join to observe
             // or administrate matches without needing a separate whitelist entry.
             if (IsPlayerAdmin(player))
             {

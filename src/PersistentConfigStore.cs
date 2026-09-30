@@ -7,7 +7,7 @@ using Dapper;
 namespace AutoTournamentCS2;
 
 /// <summary>
-/// Schema and access for the server-scoped tables in the Auto Tournament CS2 database.
+/// Schema and access for the server-scoped tables in the MatchZy Enhanced database.
 ///
 /// Both <c>at_server_config</c> and <c>at_event_queue</c> hold per-server state, and
 /// both used to be keyed without any notion of which server a row belongs to. When several
