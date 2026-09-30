@@ -1,11 +1,5 @@
 <div align="center">
 
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="assets/logo/me-wordmark-dark.svg">
-    <source media="(prefers-color-scheme: light)" srcset="assets/logo/me-wordmark-light.svg">
-    <img src="assets/logo/me-wordmark-light.svg" alt="MatchZy Enhanced" height="56">
-  </picture>
-
 # MatchZy Enhanced
 
 [![Build](https://github.com/Auto-Tournament/matchzy-enhanced/actions/workflows/build.yml/badge.svg)](https://github.com/Auto-Tournament/matchzy-enhanced/actions/workflows/build.yml)
