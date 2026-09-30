@@ -100,7 +100,7 @@ namespace AutoTournamentCS2
             database.SaveConfigValue("at_match_token", matchToken);
             Log("[at_match_token] Token set and persisted (hidden)");
 
-            // Configure webhook auth header for Auto Tournament CS2 events.
+            // Configure webhook auth header for MatchZy Enhanced events.
             Server.ExecuteCommand("at_remote_log_header_key \"X-Auto-Tournament-Token\"");
             Server.ExecuteCommand($"at_remote_log_header_value \"{matchToken}\"");
 

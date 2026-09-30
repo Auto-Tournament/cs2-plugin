@@ -224,7 +224,7 @@ namespace AutoTournamentCS2
 
         private Get5GameState getGet5Gamestate()
         {
-            // Get state from Auto Tournament CS2 state phase data and map to get5 state
+            // Get state from MatchZy Enhanced state phase data and map to get5 state
             // Get5 states: pre_veto, veto, warmup, knife, waiting_for_knife_decision, going_live, live, pending_restore, post_game
             // Please note, that Get5 have moved from integer based states to string based states, so the integer based states are not used.
             //

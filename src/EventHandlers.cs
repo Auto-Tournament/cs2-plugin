@@ -32,7 +32,7 @@ public partial class AutoTournamentCS2
             }
 
             // Handling whitelisted players (skip for simulation bots). Admins are allowed
-            // to bypass the Auto Tournament CS2 whitelist and may connect even if they are not on the
+            // to bypass the MatchZy Enhanced whitelist and may connect even if they are not on the
             // per-server whitelist or in the match roster.
             bool isSimulationBot = isSimulationMode && player.IsBot;
             if (!isSimulationBot && (!player.IsBot || !player.IsHLTV))

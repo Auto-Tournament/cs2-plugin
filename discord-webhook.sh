@@ -1,8 +1,8 @@
 #!/bin/bash
 set -e
 
-# Auto Tournament CS2 - Discord Webhook Script
-# Sends a Discord webhook notification for an Auto Tournament CS2 release
+# MatchZy Enhanced - Discord Webhook Script
+# Sends a Discord webhook notification for a MatchZy Enhanced release
 
 # Colors for output
 RED='\033[0;31m'
@@ -26,9 +26,9 @@ cd "${PROJECT_ROOT}"
 
 # Configuration
 REPO_OWNER="Auto-Tournament"
-REPO_NAME="cs2-plugin"
+REPO_NAME="matchzy-enhanced"
 
-echo -e "${GREEN}Auto Tournament CS2 - Discord Webhook${NC}"
+echo -e "${GREEN}MatchZy Enhanced - Discord Webhook${NC}"
 echo "========================================="
 echo ""
 
@@ -225,9 +225,9 @@ if command -v jq &> /dev/null; then
     echo "$CHANGELOG" > /tmp/changelog.txt
     
     jq -n \
-        --arg content "🚀 **New Auto Tournament CS2 Release: v${NEW_VERSION}**" \
-        --arg title "Auto Tournament CS2 v${NEW_VERSION}" \
-        --arg description "A new version of the Auto Tournament CS2 plugin has been released." \
+        --arg content "🚀 **New MatchZy Enhanced Release: v${NEW_VERSION}**" \
+        --arg title "MatchZy Enhanced v${NEW_VERSION}" \
+        --arg description "A new version of the MatchZy Enhanced plugin has been released." \
         --arg changelog "$(cat /tmp/changelog.txt)" \
         --arg github "https://github.com/${REPO_OWNER}/${REPO_NAME}/releases/tag/v${NEW_VERSION}" \
         --arg timestamp "$(date -u +%Y-%m-%dT%H:%M:%SZ)" \
@@ -250,7 +250,7 @@ if command -v jq &> /dev/null; then
               }
             ],
             footer: {
-              text: "Auto Tournament CS2"
+              text: "MatchZy Enhanced"
             },
             timestamp: $timestamp
           }]
@@ -263,10 +263,10 @@ else
     
     cat > "$TEMP_JSON" <<EOF
 {
-  "content": "🚀 **New Auto Tournament CS2 Release: v${NEW_VERSION}**",
+  "content": "🚀 **New MatchZy Enhanced Release: v${NEW_VERSION}**",
   "embeds": [{
-    "title": "Auto Tournament CS2 v${NEW_VERSION}",
-    "description": "A new version of the Auto Tournament CS2 plugin has been released.",
+    "title": "MatchZy Enhanced v${NEW_VERSION}",
+    "description": "A new version of the MatchZy Enhanced plugin has been released.",
     "color": 3066993,
     "fields": [
       {
@@ -281,7 +281,7 @@ else
       }
     ],
     "footer": {
-      "text": "Auto Tournament CS2"
+      "text": "MatchZy Enhanced"
     },
     "timestamp": "$(date -u +%Y-%m-%dT%H:%M:%SZ)"
   }]

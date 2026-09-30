@@ -412,7 +412,7 @@ namespace AutoTournamentCS2
                 }
                 var gameRules = Utilities.FindAllEntitiesByDesignerName<CCSGameRulesProxy>("cs_gamerules").First().GameRules!;
 
-                // Map the player to a logical Auto Tournament CS2 team for pause tracking
+                // Map the player to a logical MatchZy Enhanced team for pause tracking
                 Team? pausingTeam = null;
                 string pauseTeamName = "Unknown";
                 if (player.TeamNum == 2 && reverseTeamSides.ContainsKey("TERRORIST"))
@@ -426,7 +426,7 @@ namespace AutoTournamentCS2
                     pauseTeamName = pausingTeam.teamName;
                 }
 
-                // Enforce Auto Tournament CS2 per-team pause limit for tactical timeouts as well, if configured
+                // Enforce MatchZy Enhanced per-team pause limit for tactical timeouts as well, if configured
                 if (pausingTeam != null && maxPausesPerTeam.Value > 0)
                 {
                     if (!pausesUsed.ContainsKey(pausingTeam))
@@ -692,7 +692,7 @@ namespace AutoTournamentCS2
             Server.PrintToChatAll($"{adminChatPrefix} {message}");
         }
 
-        [ConsoleCommand("reload_admins", "Reload admins of Auto Tournament CS2")]
+        [ConsoleCommand("reload_admins", "Reload admins of MatchZy Enhanced")]
         public void OnReloadAdmins(CCSPlayerController? player, CommandInfo? command)
         {
             if (IsPlayerAdmin(player, "reload_admins", "@css/config"))
@@ -706,7 +706,7 @@ namespace AutoTournamentCS2
             }
         }
 
-        [ConsoleCommand("at_reload_config", "Re-executes AutoTournamentCS2/config.cfg to reload Auto Tournament CS2 plugin configuration")]
+        [ConsoleCommand("at_reload_config", "Re-executes AutoTournamentCS2/config.cfg to reload MatchZy Enhanced plugin configuration")]
         public void OnReloadConfig(CCSPlayerController? player, CommandInfo? command)
         {
             if (!IsPlayerAdmin(player, "at_reload_config", "@css/config"))
@@ -717,14 +717,14 @@ namespace AutoTournamentCS2
 
             if (isMatchLive)
             {
-                ReplyToUserCommand(player, "Cannot reload Auto Tournament CS2 config while a match is live. Please wait until postgame or warmup.");
+                ReplyToUserCommand(player, "Cannot reload MatchZy Enhanced config while a match is live. Please wait until postgame or warmup.");
                 return;
             }
 
             Log("[ReloadConfig] Executing AutoTournamentCS2/config.cfg from at_reload_config command.");
             Server.ExecuteCommand("execifexists AutoTournamentCS2/config.cfg");
 
-            ReplyToUserCommand(player, "Auto Tournament CS2 configuration reloaded from AutoTournamentCS2/config.cfg.");
+            ReplyToUserCommand(player, "MatchZy Enhanced configuration reloaded from AutoTournamentCS2/config.cfg.");
         }
 
         [ConsoleCommand("css_match", "Starts match mode")]
@@ -738,7 +738,7 @@ namespace AutoTournamentCS2
 
             if (matchStarted)
             {
-                // ReplyToUserCommand(player, "Auto Tournament CS2 is already in match mode!");
+                // ReplyToUserCommand(player, "MatchZy Enhanced is already in match mode!");
                 ReplyToUserCommand(player, Localizer["at.cc.match"]);
                 return;
             }
@@ -757,7 +757,7 @@ namespace AutoTournamentCS2
 
             if (matchStarted)
             {
-                //ReplyToUserCommand(player, "Auto Tournament CS2 is already in match mode!");
+                //ReplyToUserCommand(player, "MatchZy Enhanced is already in match mode!");
                 ReplyToUserCommand(player, Localizer["at.cc.exitprac"]);
                 return;
             }
@@ -860,9 +860,9 @@ namespace AutoTournamentCS2
             return HookResult.Stop;
         }
 
-        [ConsoleCommand("at_version", "Displays the current Auto Tournament CS2 version")]
-        [ConsoleCommand("css_at_version", "Displays the current Auto Tournament CS2 version")]
-        [ConsoleCommand("css_version", "Displays the current Auto Tournament CS2 version")]
+        [ConsoleCommand("at_version", "Displays the current MatchZy Enhanced version")]
+        [ConsoleCommand("css_at_version", "Displays the current MatchZy Enhanced version")]
+        [ConsoleCommand("css_version", "Displays the current MatchZy Enhanced version")]
         public void OnAutoTournamentCS2VersionCommand(CCSPlayerController? player, CommandInfo? command)
         {
             string message = $"{chatPrefix} {ChatColors.Green}Auto Tournament{ChatColors.Default} version: {ChatColors.Lime}{ModuleVersion}{ChatColors.Default}";
@@ -1017,7 +1017,7 @@ namespace AutoTournamentCS2
             var testEvent = new AutoTournamentCS2TestEvent
             {
                 MatchId = liveMatchId,
-                Message = "This is a test event from Auto Tournament CS2",
+                Message = "This is a test event from MatchZy Enhanced",
                 Timestamp = DateTimeOffset.UtcNow.ToUnixTimeSeconds(),
                 TriggeredBy = player?.PlayerName ?? "Console",
                 ServerId = matchReportServerId.Value,

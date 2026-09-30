@@ -87,7 +87,7 @@ public sealed class ScopeInputs
 /// <summary>
 /// Derives the stable identity that scopes this server's rows in the shared database.
 ///
-/// Several Auto Tournament CS2 servers on one box normally share a single MySQL database, but per-server
+/// Several MatchZy Enhanced servers on one box normally share a single MySQL database, but per-server
 /// values (server id, bootstrap URL and token, remote log URL and header, demo upload URL) are
 /// stored in <c>at_server_config</c>, so each row carries the server's scope.
 ///

@@ -1,4 +1,4 @@
-# Contributing to Auto Tournament CS2
+# Contributing to MatchZy Enhanced
 
 Thank you for your interest in contributing! 🎉
 
@@ -7,8 +7,8 @@ Thank you for your interest in contributing! 🎉
 1. **Fork & Clone**
 
    ```bash
-   git clone https://github.com/YOUR_USERNAME/cs2-plugin.git
-   cd cs2-plugin
+   git clone https://github.com/YOUR_USERNAME/matchzy-enhanced.git
+   cd matchzy-enhanced
    ```
 
 2. **Build and test** (needs the .NET 8 SDK)
@@ -32,11 +32,11 @@ Thank you for your interest in contributing! 🎉
 
 ## Releases
 
-Release notes go in the GitHub release; the [docs changelog](https://docs.autotournament.gg/reference/changelog/cs2-plugin) is generated from them, and [CHANGELOG.md](../CHANGELOG.md) only links there.
+Release notes go in the GitHub release; the [docs changelog](https://docs.autotournament.gg/reference/changelog/matchzy-enhanced) is generated from them, and [CHANGELOG.md](../CHANGELOG.md) only links there.
 
 ## 🐛 Reporting Issues
 
-Found a bug? Please [open an issue](https://github.com/Auto-Tournament/cs2-plugin/issues/new) with:
+Found a bug? Please [open an issue](https://github.com/Auto-Tournament/matchzy-enhanced/issues/new) with:
 
 - Clear description
 - Steps to reproduce
@@ -55,7 +55,7 @@ Need help testing something or getting feedback? Use the **Community Request** i
 
 ## 💬 Questions?
 
-- [GitHub Discussions](https://github.com/Auto-Tournament/cs2-plugin/discussions) - Ask questions
+- [GitHub Discussions](https://github.com/Auto-Tournament/matchzy-enhanced/discussions) - Ask questions
 - [Documentation](https://docs.sivert.io/docs/me) - Read the docs
 
 ## 📖 Code of Conduct

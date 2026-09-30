@@ -13,9 +13,9 @@ using Microsoft.Extensions.Logging;
 namespace AutoTournamentCS2;
 
 /// <summary>
-/// Match-aware CS2 auto-updater that NEVER restarts while an Auto Tournament CS2 match is in progress.
+/// Match-aware CS2 auto-updater that NEVER restarts while a MatchZy Enhanced match is in progress.
 /// It only restarts when at_tournament_status is in a safe state (idle/postgame/error).
-/// Implemented as part of the main Auto Tournament CS2 plugin.
+/// Implemented as part of the main MatchZy Enhanced plugin.
 /// </summary>
 public partial class AutoTournamentCS2
 {
@@ -35,7 +35,7 @@ public partial class AutoTournamentCS2
     private static double _nextUpdateCheckAllowedTime;
     private static bool _offlineWarningLogged;
 
-    // Cvars we care about from Auto Tournament CS2
+    // Cvars we care about from MatchZy Enhanced
     private static ConVar? _atTournamentStatus;
     private static ConVar? _atTournamentMatch;
 
@@ -87,7 +87,7 @@ public partial class AutoTournamentCS2
                 // best-effort
             }
 
-            // Never perform update checks while an Auto Tournament CS2 match is in progress; this keeps
+            // Never perform update checks while a MatchZy Enhanced match is in progress; this keeps
             // all Steam API polling and restart decisions strictly outside live matches.
             string status = GetAutoTournamentCS2Status();
             if (IsMatchInProgress(status))
@@ -117,7 +117,7 @@ public partial class AutoTournamentCS2
 
     /// <summary>
     /// Performs the actual Steam UpToDateCheck and, if an update is available, schedules a
-    /// shutdown that respects Auto Tournament CS2's tournament status.
+    /// shutdown that respects MatchZy Enhanced's tournament status.
     /// </summary>
     private async Task CheckServerVersionAndMaybeScheduleShutdownAsync()
     {
@@ -194,12 +194,12 @@ public partial class AutoTournamentCS2
 
         _restartRequired = true;
 
-        // Try to shut down, but respect Auto Tournament CS2's status.
+        // Try to shut down, but respect MatchZy Enhanced's status.
         TryShutdownRespectingAutoTournamentCS2();
     }
 
     /// <summary>
-    /// Attempts to shut down the server. If Auto Tournament CS2 reports a live/active match,
+    /// Attempts to shut down the server. If MatchZy Enhanced reports a live/active match,
     /// we defer and reschedule instead of quitting.
     /// </summary>
     private void TryShutdownRespectingAutoTournamentCS2()
@@ -215,7 +215,7 @@ public partial class AutoTournamentCS2
         if (IsMatchInProgress(status))
         {
             Logger.LogInformation(
-                "[AutoTournamentCS2SafeAutoUpdater] Update available (version {Version}), but Auto Tournament CS2 status is '{Status}' for match '{MatchSlug}'. Deferring shutdown.",
+                "[AutoTournamentCS2SafeAutoUpdater] Update available (version {Version}), but MatchZy Enhanced status is '{Status}' for match '{MatchSlug}'. Deferring shutdown.",
                 _requiredVersion, status, string.IsNullOrEmpty(matchSlug) ? "<none>" : matchSlug
             );
 
@@ -225,7 +225,7 @@ public partial class AutoTournamentCS2
         }
 
         Logger.LogInformation(
-            "[AutoTournamentCS2SafeAutoUpdater] Auto Tournament CS2 status is '{Status}' (safe). Preparing server shutdown for CS2 update {Version}.",
+            "[AutoTournamentCS2SafeAutoUpdater] MatchZy Enhanced status is '{Status}' (safe). Preparing server shutdown for CS2 update {Version}.",
             status, _requiredVersion
         );
 
@@ -257,7 +257,7 @@ public partial class AutoTournamentCS2
     }
 
     /// <summary>
-    /// Treat these Auto Tournament CS2 statuses as "match in progress" and never restart during them.
+    /// Treat these MatchZy Enhanced statuses as "match in progress" and never restart during them.
     /// </summary>
     private static bool IsMatchInProgress(string status)
     {
@@ -284,7 +284,7 @@ public partial class AutoTournamentCS2
     {
         if (!IsServerSafeToShutdownNow())
         {
-            Logger.LogWarning("[AutoTournamentCS2SafeAutoUpdater] Shutdown aborted: Auto Tournament CS2 internal state is not safe yet. Will retry.");
+            Logger.LogWarning("[AutoTournamentCS2SafeAutoUpdater] Shutdown aborted: MatchZy Enhanced internal state is not safe yet. Will retry.");
             AddTimer(ShutdownRetryDelaySeconds, TryShutdownRespectingAutoTournamentCS2, TimerFlags.STOP_ON_MAPCHANGE);
             return;
         }
@@ -420,7 +420,7 @@ public partial class AutoTournamentCS2
 
                 string msg = upToDate
                     ? $"{prefix} Server is up to date."
-                    : $"{prefix} Update available. Required version: {requiredVersion}. The auto-updater will restart once Auto Tournament CS2 is idle/postgame.";
+                    : $"{prefix} Update available. Required version: {requiredVersion}. The auto-updater will restart once MatchZy Enhanced is idle/postgame.";
 
                 if (player != null && player.IsValid)
                 {
